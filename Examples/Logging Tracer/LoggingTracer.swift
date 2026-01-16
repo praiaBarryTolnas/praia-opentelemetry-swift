@@ -4,7 +4,7 @@
  */
 
 import Foundation
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 
 class LoggingTracer: Tracer {
   let tracerName = "LoggingTracer"

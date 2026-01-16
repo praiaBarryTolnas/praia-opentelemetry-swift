@@ -8,7 +8,7 @@
   import CoreTelephony
   import Foundation
   import Network
-  import OpenTelemetryApi
+  import PraiaOpenTelemetryApi
 
   public class NetworkStatusInjector {
     private var netstat: NetworkStatus

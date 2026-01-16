@@ -4,14 +4,14 @@
  */
 
 import CoreMetrics
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 
 public class OpenTelemetrySwiftMetrics: MetricsFactory {
-  let meter: any OpenTelemetryApi.Meter
+  let meter: any PraiaOpenTelemetryApi.Meter
   var metrics = [MetricKey: SwiftMetric]()
   let lock = Lock()
 
-  public init(meter: any OpenTelemetryApi.Meter) {
+  public init(meter: any PraiaOpenTelemetryApi.Meter) {
     self.meter = meter
   }
 

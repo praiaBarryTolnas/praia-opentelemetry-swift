@@ -5,7 +5,7 @@
 
 import Foundation
 import OpenTelemetrySdk
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 
 /// OpenTelemetry log record processor that adds session attributes to all log records
 public class SessionLogRecordProcessor: LogRecordProcessor {

@@ -4,7 +4,7 @@
  */
 
 import Foundation
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 
 class LoggingTracerProvider: TracerProvider {
   func get(instrumentationName: String, instrumentationVersion: String?,

@@ -7,7 +7,7 @@
 import Foundation
 import MetricKit
 @testable import MetricKitInstrumentation
-@testable import OpenTelemetryApi
+@testable import PraiaOpenTelemetryApi
 @testable import OpenTelemetrySdk
 import InMemoryExporter
 import XCTest

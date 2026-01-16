@@ -1,5 +1,5 @@
 import XCTest
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 @testable import Sessions
 @testable import OpenTelemetrySdk
 

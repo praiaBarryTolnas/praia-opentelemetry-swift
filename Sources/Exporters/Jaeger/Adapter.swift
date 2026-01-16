@@ -6,7 +6,7 @@
 #if !os(watchOS) && !os(visionOS)
 
   import Foundation
-  import OpenTelemetryApi
+  import PraiaOpenTelemetryApi
   import OpenTelemetrySdk
   import Thrift
 

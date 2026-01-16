@@ -4,7 +4,7 @@
 //
 
 import XCTest
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 @testable import OpenTelemetryProtocolExporterGrpc
 @testable import OpenTelemetryProtocolExporterCommon
 @testable import OpenTelemetrySdk

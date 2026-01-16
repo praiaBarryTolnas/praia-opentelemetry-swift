@@ -1,6 +1,6 @@
 import XCTest
 @testable import Sessions
-@testable import OpenTelemetryApi
+@testable import PraiaOpenTelemetryApi
 @testable import OpenTelemetrySdk
 
 final class SessionEventInstrumentationTests: XCTestCase {

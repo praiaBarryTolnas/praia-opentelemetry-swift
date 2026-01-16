@@ -6,7 +6,7 @@
 import Foundation
 
 @testable import InMemoryExporter
-@testable import OpenTelemetryApi
+@testable import PraiaOpenTelemetryApi
 @testable import OpenTelemetrySdk
 import XCTest
 

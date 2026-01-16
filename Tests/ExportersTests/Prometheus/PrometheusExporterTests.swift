@@ -7,7 +7,7 @@ import Foundation
 #if canImport(FoundationNetworking)
   import FoundationNetworking
 #endif
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 import OpenTelemetrySdk
 @testable import PrometheusExporter
 import XCTest

@@ -6,7 +6,7 @@
 import Foundation
 
 import Foundation
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 @testable import OpenTelemetryProtocolExporterCommon
 @testable import OpenTelemetrySdk
 import XCTest

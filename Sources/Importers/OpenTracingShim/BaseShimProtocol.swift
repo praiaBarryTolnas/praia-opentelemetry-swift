@@ -4,7 +4,7 @@
  */
 
 import Foundation
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 
 protocol BaseShimProtocol {
   var telemetryInfo: TelemetryInfo { get }

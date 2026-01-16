@@ -4,7 +4,7 @@
  */
 
 import Foundation
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 import Opentracing
 
 public class TracerShim: OTTracer, BaseShimProtocol {

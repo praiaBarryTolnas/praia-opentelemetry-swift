@@ -8,7 +8,7 @@ import GRPC
 import Logging
 import NIO
 import NIOHPACK
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 import OpenTelemetryProtocolExporterCommon
 import OpenTelemetrySdk
 

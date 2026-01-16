@@ -8,7 +8,7 @@
   import Foundation
 
   @testable import JaegerExporter
-  @testable import OpenTelemetryApi
+  @testable import PraiaOpenTelemetryApi
   @testable import OpenTelemetrySdk
   import Thrift
   import XCTest

@@ -4,7 +4,7 @@
  */
 
 import InMemoryExporter
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 import OpenTelemetrySdk
 import BaggagePropagationProcessor
 import XCTest

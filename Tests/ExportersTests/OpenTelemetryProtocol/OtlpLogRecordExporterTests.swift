@@ -7,7 +7,7 @@ import Foundation
 import GRPC
 import Logging
 import NIO
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 import OpenTelemetryProtocolExporterCommon
 @testable import OpenTelemetryProtocolExporterGrpc
 @testable import OpenTelemetrySdk

@@ -4,7 +4,7 @@
  */
 
 import Foundation
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 import OpenTelemetrySdk
 
 public class TelemetryResourceProvider: ResourceProvider {

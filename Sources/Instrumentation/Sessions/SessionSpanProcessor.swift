@@ -5,7 +5,7 @@
 
 import Foundation
 import OpenTelemetrySdk
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 
 /// OpenTelemetry span processor that automatically adds session ID to all spans
 /// This processor ensures that all telemetry data is associated with the current session

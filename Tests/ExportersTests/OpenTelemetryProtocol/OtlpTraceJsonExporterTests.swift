@@ -5,7 +5,7 @@
 
 import Foundation
 
-@testable import OpenTelemetryApi
+@testable import PraiaOpenTelemetryApi
 @testable import OpenTelemetryProtocolExporterCommon
 @testable import OpenTelemetryProtocolExporterGrpc
 @testable import OpenTelemetrySdk

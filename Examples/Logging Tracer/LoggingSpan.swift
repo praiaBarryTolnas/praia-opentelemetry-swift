@@ -4,7 +4,7 @@
  */
 
 import Foundation
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 
 class LoggingSpan: Span {
   var name: String
@@ -57,7 +57,7 @@ class LoggingSpan: Span {
   }
 
   public func setAttributes(
-    _ attributes: [String: OpenTelemetryApi.AttributeValue]
+    _ attributes: [String: PraiaOpenTelemetryApi.AttributeValue]
   ) {
     attributes.forEach { key, value in
       setAttribute(key: key, value: value)

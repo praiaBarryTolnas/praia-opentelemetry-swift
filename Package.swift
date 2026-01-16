@@ -29,7 +29,7 @@ let package = Package(
     .executable(name: "StableMetricSample", targets: ["StableMetricSample"])
   ],
   dependencies: [
-    .package(url: "https://github.com/open-telemetry/opentelemetry-swift-core.git", from: "2.3.0"),
+    .package(path: "../praia-opentelemetry-swift-core"),
     .package(url: "https://github.com/apple/swift-nio.git", from: "2.92.0"),
     .package(url: "https://github.com/grpc/grpc-swift.git", exact: "1.27.1"),
     .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.33.3"),
@@ -45,7 +45,7 @@ let package = Package(
     .target(
       name: "OTelSwiftLog",
       dependencies: [
-        .product(name: "OpenTelemetryApi", package: "opentelemetry-swift-core"),
+        .product(name: "PraiaOpenTelemetryApi", package: "praia-opentelemetry-swift-core"),
         .product(name: "Logging", package: "swift-log")
       ],
       path: "Sources/Bridges/OTelSwiftLog",
@@ -54,7 +54,7 @@ let package = Package(
     .target(
       name: "SwiftMetricsShim",
       dependencies: [
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
         .product(name: "CoreMetrics", package: "swift-metrics")
       ],
       path: "Sources/Importers/SwiftMetricsShim",
@@ -63,7 +63,7 @@ let package = Package(
     .target(
       name: "PrometheusExporter",
       dependencies: [
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
         .product(name: "NIO", package: "swift-nio"),
         .product(name: "NIOHTTP1", package: "swift-nio")
       ],
@@ -72,7 +72,7 @@ let package = Package(
     .target(
       name: "OpenTelemetryProtocolExporterCommon",
       dependencies: [
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
         .product(name: "Logging", package: "swift-log"),
         .product(name: "SwiftProtobuf", package: "swift-protobuf")
       ],
@@ -81,7 +81,7 @@ let package = Package(
     .target(
       name: "OpenTelemetryProtocolExporterHttp",
       dependencies: [
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
         "OpenTelemetryProtocolExporterCommon"
       ],
       path: "Sources/Exporters/OpenTelemetryProtocolHttp"
@@ -89,7 +89,7 @@ let package = Package(
     .target(
       name: "OpenTelemetryProtocolExporterGrpc",
       dependencies: [
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
         "OpenTelemetryProtocolExporterCommon",
         .product(name: "GRPC", package: "grpc-swift")
       ],
@@ -98,14 +98,14 @@ let package = Package(
     .target(
       name: "InMemoryExporter",
       dependencies: [
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
       ],
       path: "Sources/Exporters/InMemory"
     ),
     .target(
       name: "PersistenceExporter",
       dependencies: [
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
       ],
       path: "Sources/Exporters/Persistence",
       exclude: ["README.md"]
@@ -113,8 +113,8 @@ let package = Package(
     .target(
       name: "BaggagePropagationProcessor",
       dependencies: [
-        .product(name: "OpenTelemetryApi", package: "opentelemetry-swift-core"),
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+        .product(name: "PraiaOpenTelemetryApi", package: "praia-opentelemetry-swift-core"),
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
 
       ],
       path: "Sources/Contrib/Processors/BaggagePropagationProcessor"
@@ -122,8 +122,8 @@ let package = Package(
     .target(
       name: "Sessions",
       dependencies: [
-        .product(name: "OpenTelemetryApi", package: "opentelemetry-swift-core"),
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+        .product(name: "PraiaOpenTelemetryApi", package: "praia-opentelemetry-swift-core"),
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
 
       ],
       path: "Sources/Instrumentation/Sessions",
@@ -138,7 +138,7 @@ let package = Package(
       name: "SwiftMetricsShimTests",
       dependencies: [
         "SwiftMetricsShim",
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
       ],
       path: "Tests/ImportersTests/SwiftMetricsShim"
     ),
@@ -177,21 +177,21 @@ let package = Package(
       name: "SessionTests",
       dependencies: [
         "Sessions",
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
       ],
       path: "Tests/InstrumentationTests/SessionTests"
     ),
     .executableTarget(
       name: "LoggingTracer",
       dependencies: [
-        .product(name: "OpenTelemetryApi", package: "opentelemetry-swift-core")
+        .product(name: "PraiaOpenTelemetryApi", package: "praia-opentelemetry-swift-core")
       ],
       path: "Examples/Logging Tracer"
     ),
     .executableTarget(
       name: "LogsSample",
       dependencies: [
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
         "OpenTelemetryProtocolExporterGrpc",
         .product(name: "GRPC", package: "grpc-swift")
       ],
@@ -200,9 +200,9 @@ let package = Package(
     .executableTarget(
       name: "StableMetricSample",
       dependencies: [
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
         "OpenTelemetryProtocolExporterGrpc",
-        .product(name: "StdoutExporter", package: "opentelemetry-swift-core")
+        .product(name: "StdoutExporter", package: "praia-opentelemetry-swift-core")
       ],
       path: "Examples/Stable Metric Sample",
       exclude: ["README.md"]
@@ -223,7 +223,7 @@ extension Package {
         .target(
           name: "OpenTracingShim",
           dependencies: [
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
             .product(name: "Opentracing", package: "opentracing-objc")
           ],
           path: "Sources/Importers/OpenTracingShim",
@@ -233,7 +233,7 @@ extension Package {
           name: "OpenTracingShimTests",
           dependencies: [
             "OpenTracingShim",
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
           ],
           path: "Tests/ImportersTests/OpenTracingShim"
         )
@@ -260,7 +260,7 @@ extension Package {
         .target(
           name: "JaegerExporter",
           dependencies: [
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
             .product(
               name: "Thrift", package: "Thrift-Swift",
               condition: .when(platforms: [.iOS, .macOS, .tvOS, .macCatalyst, .linux])
@@ -276,8 +276,8 @@ extension Package {
         .executableTarget(
           name: "SimpleExporter",
           dependencies: [
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
-            .product(name: "StdoutExporter", package: "opentelemetry-swift-core"),
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
+            .product(name: "StdoutExporter", package: "praia-opentelemetry-swift-core"),
             "JaegerExporter",
             "ZipkinExporter",
             "ResourceExtension", "SignPostIntegration"
@@ -288,7 +288,7 @@ extension Package {
         .target(
           name: "NetworkStatus",
           dependencies: [
-            .product(name: "OpenTelemetryApi", package: "opentelemetry-swift-core")
+            .product(name: "PraiaOpenTelemetryApi", package: "praia-opentelemetry-swift-core")
           ],
           path: "Sources/Instrumentation/NetworkStatus",
           linkerSettings: [.linkedFramework("CoreTelephony", .when(platforms: [.iOS]))]
@@ -303,7 +303,7 @@ extension Package {
         .target(
           name: "URLSessionInstrumentation",
           dependencies: [
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
             "NetworkStatus"],
           path: "Sources/Instrumentation/URLSession",
           exclude: ["README.md"]
@@ -320,7 +320,7 @@ extension Package {
           name: "NetworkSample",
           dependencies: [
             "URLSessionInstrumentation",
-            .product(name: "StdoutExporter", package: "opentelemetry-swift-core")
+            .product(name: "StdoutExporter", package: "praia-opentelemetry-swift-core")
           ],
           path: "Examples/Network Sample",
           exclude: ["README.md"]
@@ -328,7 +328,7 @@ extension Package {
         .target(
           name: "ZipkinExporter",
           dependencies: [
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
           ],
           path: "Sources/Exporters/Zipkin"
         ),
@@ -340,9 +340,9 @@ extension Package {
         .executableTarget(
           name: "OTLPExporter",
           dependencies: [
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
             "OpenTelemetryProtocolExporterGrpc",
-            .product(name: "StdoutExporter", package: "opentelemetry-swift-core"),
+            .product(name: "StdoutExporter", package: "praia-opentelemetry-swift-core"),
             "ZipkinExporter", "ResourceExtension", "SignPostIntegration"
           ],
           path: "Examples/OTLP Exporter",
@@ -351,8 +351,8 @@ extension Package {
         .executableTarget(
           name: "OTLPHTTPExporter",
           dependencies: [
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
-            "OpenTelemetryProtocolExporterHttp", .product(name: "StdoutExporter", package: "opentelemetry-swift-core"),
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
+            "OpenTelemetryProtocolExporterHttp", .product(name: "StdoutExporter", package: "praia-opentelemetry-swift-core"),
             "ZipkinExporter", "ResourceExtension", "SignPostIntegration",
           ],
           path: "Examples/OTLP HTTP Exporter",
@@ -361,7 +361,7 @@ extension Package {
         .target(
           name: "SignPostIntegration",
           dependencies: [
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
           ],
           path: "Sources/Instrumentation/SignPostIntegration",
           exclude: ["README.md"]
@@ -369,7 +369,7 @@ extension Package {
         .target(
           name: "ResourceExtension",
           dependencies: [
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
           ],
           path: "Sources/Instrumentation/SDKResourceExtension",
           exclude: ["README.md"]
@@ -378,14 +378,14 @@ extension Package {
           name: "ResourceExtensionTests",
           dependencies: [
             "ResourceExtension",
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
           ],
           path: "Tests/InstrumentationTests/SDKResourceExtensionTests"
         ),
         .target(
           name: "MetricKitInstrumentation",
           dependencies: [
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
           ],
           path: "Sources/Instrumentation/MetricKit",
           exclude: ["README.md"]
@@ -395,14 +395,14 @@ extension Package {
           dependencies: [
             "MetricKitInstrumentation",
             "InMemoryExporter",
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
           ],
           path: "Tests/InstrumentationTests/MetricKitTests"
         ),
         .executableTarget(
           name: "PrometheusSample",
           dependencies: [
-            .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core"),
+            .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core"),
             "PrometheusExporter"],
           path: "Examples/Prometheus Sample",
           exclude: ["README.md"]

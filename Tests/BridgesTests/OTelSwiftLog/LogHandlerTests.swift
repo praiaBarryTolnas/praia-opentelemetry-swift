@@ -1,6 +1,6 @@
 import XCTest
 import Logging
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 
 @testable import OTelSwiftLog
 
@@ -53,12 +53,12 @@ final class OTelLogHandlerTests: XCTestCase {
   }
 
   func testConvertSeverity() {
-    XCTAssertEqual(convertSeverity(level: .trace), OpenTelemetryApi.Severity.trace)
-    XCTAssertEqual(convertSeverity(level: .debug), OpenTelemetryApi.Severity.debug)
-    XCTAssertEqual(convertSeverity(level: .info), OpenTelemetryApi.Severity.info)
-    XCTAssertEqual(convertSeverity(level: .notice), OpenTelemetryApi.Severity.info2)
-    XCTAssertEqual(convertSeverity(level: .warning), OpenTelemetryApi.Severity.warn)
-    XCTAssertEqual(convertSeverity(level: .error), OpenTelemetryApi.Severity.error)
-    XCTAssertEqual(convertSeverity(level: .critical), OpenTelemetryApi.Severity.error2)
+    XCTAssertEqual(convertSeverity(level: .trace), PraiaOpenTelemetryApi.Severity.trace)
+    XCTAssertEqual(convertSeverity(level: .debug), PraiaOpenTelemetryApi.Severity.debug)
+    XCTAssertEqual(convertSeverity(level: .info), PraiaOpenTelemetryApi.Severity.info)
+    XCTAssertEqual(convertSeverity(level: .notice), PraiaOpenTelemetryApi.Severity.info2)
+    XCTAssertEqual(convertSeverity(level: .warning), PraiaOpenTelemetryApi.Severity.warn)
+    XCTAssertEqual(convertSeverity(level: .error), PraiaOpenTelemetryApi.Severity.error)
+    XCTAssertEqual(convertSeverity(level: .critical), PraiaOpenTelemetryApi.Severity.error2)
   }
 }

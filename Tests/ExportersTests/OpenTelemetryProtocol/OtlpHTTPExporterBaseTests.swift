@@ -9,7 +9,7 @@
     import FoundationNetworking
   #endif
   import Logging
-  import OpenTelemetryApi
+  import PraiaOpenTelemetryApi
   import OpenTelemetryProtocolExporterCommon
   @testable import OpenTelemetryProtocolExporterHttp
   @testable import OpenTelemetrySdk

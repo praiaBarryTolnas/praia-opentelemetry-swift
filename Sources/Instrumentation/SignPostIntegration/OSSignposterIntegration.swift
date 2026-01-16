@@ -5,7 +5,7 @@
 
 import Foundation
 import os
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 import OpenTelemetrySdk
 
 /// A span processor that decorates spans with the origin attribute

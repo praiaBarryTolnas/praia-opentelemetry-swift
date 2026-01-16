@@ -1,5 +1,5 @@
 import Foundation
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 import Logging
 
 // let the bridgename be the url of the package?
@@ -18,7 +18,7 @@ public struct OTelLogHandler: LogHandler {
 
   /// loggerProvider to use for the bridge.
   private var loggerProvider: LoggerProvider
-  private var logger: OpenTelemetryApi.Logger
+  private var logger: PraiaOpenTelemetryApi.Logger
 
   // Define metadata for this handler
   public var metadata: Logging.Logger.Metadata = [:]
@@ -35,7 +35,7 @@ public struct OTelLogHandler: LogHandler {
   ///  - Parameter loggerProvider: The logger provider to use in the bridge. Defaults to the global logger provider.
   ///  - Parameter includeTraceContext : boolean flag used for the logger builder
   ///  - Parameter attributes: attributes to apply to the logger builder
-  public init(loggerProvider: LoggerProvider = OpenTelemetryApi.DefaultLoggerProvider.instance,
+  public init(loggerProvider: LoggerProvider = PraiaOpenTelemetryApi.DefaultLoggerProvider.instance,
               includeTraceContext: Bool = true,
               attributes: [String: AttributeValue] = [String: AttributeValue]()) {
     self.loggerProvider = loggerProvider
@@ -121,21 +121,21 @@ func convertToAttributeValue(_ value: Logging.Logger.Metadata.Value) -> Attribut
   }
 }
 
-func convertSeverity(level: Logging.Logger.Level) -> OpenTelemetryApi.Severity {
+func convertSeverity(level: Logging.Logger.Level) -> PraiaOpenTelemetryApi.Severity {
   switch level {
   case .trace:
-    return OpenTelemetryApi.Severity.trace
+    return PraiaOpenTelemetryApi.Severity.trace
   case .debug:
-    return OpenTelemetryApi.Severity.debug
+    return PraiaOpenTelemetryApi.Severity.debug
   case .info:
-    return OpenTelemetryApi.Severity.info
+    return PraiaOpenTelemetryApi.Severity.info
   case .notice:
-    return OpenTelemetryApi.Severity.info2
+    return PraiaOpenTelemetryApi.Severity.info2
   case .warning:
-    return OpenTelemetryApi.Severity.warn
+    return PraiaOpenTelemetryApi.Severity.warn
   case .error:
-    return OpenTelemetryApi.Severity.error
+    return PraiaOpenTelemetryApi.Severity.error
   case .critical:
-    return OpenTelemetryApi.Severity.error2 // should this be fatal instead?
+    return PraiaOpenTelemetryApi.Severity.error2 // should this be fatal instead?
   }
 }

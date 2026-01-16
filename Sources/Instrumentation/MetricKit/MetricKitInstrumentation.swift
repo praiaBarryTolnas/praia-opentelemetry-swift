@@ -1,7 +1,7 @@
 #if canImport(MetricKit) && !os(tvOS) && !os(macOS)
     import Foundation
     import MetricKit
-    import OpenTelemetryApi
+    import PraiaOpenTelemetryApi
 
     private let metricKitInstrumentationName = "MetricKit"
     private let metricKitInstrumentationVersion = "0.0.1"

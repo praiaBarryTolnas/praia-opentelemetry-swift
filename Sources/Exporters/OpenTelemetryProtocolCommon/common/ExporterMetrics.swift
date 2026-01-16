@@ -3,7 +3,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 import Foundation
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 
 /// `ExporterMetrics` will provide a way to track how many data have been seen or successfully exported,
 /// as well as how many failed. The exporter will adopt an instance of this and inject the provider as a dependency.

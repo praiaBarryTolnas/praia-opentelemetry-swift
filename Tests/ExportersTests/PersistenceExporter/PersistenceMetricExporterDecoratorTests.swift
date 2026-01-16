@@ -4,7 +4,7 @@
  */
 
 @testable import PersistenceExporter
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 import OpenTelemetrySdk
 import XCTest
 

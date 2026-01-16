@@ -4,7 +4,7 @@
  */
 
 import Foundation
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 import OpenTelemetrySdk
 import os.log
 #if os(iOS) && !targetEnvironment(macCatalyst)

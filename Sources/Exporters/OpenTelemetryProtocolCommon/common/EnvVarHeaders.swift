@@ -4,7 +4,7 @@
  */
 
 import Foundation
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 
 /// Provides a framework for detection of resource information from the environment variable
 public struct EnvVarHeaders {

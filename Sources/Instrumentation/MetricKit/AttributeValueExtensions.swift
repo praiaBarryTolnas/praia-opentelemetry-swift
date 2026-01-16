@@ -1,6 +1,6 @@
 #if canImport(MetricKit) && !os(tvOS) && !os(macOS)
 import Foundation
-import OpenTelemetryApi
+import PraiaOpenTelemetryApi
 
 /// A protocol to make it easier to write generic functions for AttributeValues.
 protocol AttributeValueConvertable {
