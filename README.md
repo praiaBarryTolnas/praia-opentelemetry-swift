@@ -28,7 +28,7 @@ and to your application/library target, add `OpenTelemetryApi` or `OpenTelemetry
 .target(
     name: "ExampleTelemetryProducerApp",
     dependencies: [
-        .product(name: "OpenTelemetryApi", package: "opentelemetry-swift-core")
+        .product(name: "OpenTelemetryApi", package: "praia-opentelemetry-swift-core")
     ])
 ```
 
@@ -38,7 +38,7 @@ or
 .target(
     name: "ExampleApp",
     dependencies: [
-        .product(name: "OpenTelemetrySdk", package: "opentelemetry-swift-core")
+        .product(name: "OpenTelemetrySdk", package: "praia-opentelemetry-swift-core")
     ])
 ```
 

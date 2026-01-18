@@ -5,7 +5,7 @@ import Foundation
 import PackageDescription
 
 let package = Package(
-  name: "opentelemetry-swift",
+  name: "praia-opentelemetry-swift",
   platforms: [
     .macOS(.v12),
     .iOS(.v13),
